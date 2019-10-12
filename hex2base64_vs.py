@@ -24,7 +24,7 @@ def read(i):                                                                 # R
     if i == '1':
         HEXag = input(Message_hex)
         return HEXag
-    if i == '4':
+    if i == '3':
         strg = input(Message_str)
         return strg
     else:
@@ -69,23 +69,24 @@ def str2bs64(i):
 def menu():
     print("[1] Hex2base64")
     print("[2] base64-2-hex")
-    print("[3] Exit.  *Acceptable options (3, e, E, exit, Exit)")
-    print("[4] String2base64")
+    print("[3] String2base64")
+    print("[q] Exit.  *Acceptable options (3, e, E, exit, Exit)")
     print("Select from menu: ")
 
 
 def main():
     menu()
     opt = input()
-    while opt != '3' or 'exit' or 'E' or 'e' or 'Exit' or 'quit':
+    while opt != 'q' or 'exit' or 'E' or 'e' or 'Exit' or 'quit':
         if opt == '1':
             print("OUTPUT: " + hex2b64(opt) + '\n')
             main()
         elif opt == '2':
             print("OUTPUT: " + bas62hex(opt) + '\n')
             main()
-        elif opt == '4':
+        elif opt == '3':
             print("OUTPUT: " + bas62hex(opt))
+            main()
         print("Bye!")
         exit()
 
