@@ -19,20 +19,20 @@ Message_str = "Enter a String: "
 Err = "entered value must only contain Hex e.g.(0..9 - A..F)"
 
 
-def read(i):                                                                 # Read From User.
+def read(i):                                                         # Read From User.
     i = i
     if i == '1':
         HEXag = input(Message_hex)
         return HEXag
+    if i == '2':
+        bs64 = input(Message_bs64)
+        return bs64
     if i == '3':
         strg = input(Message_str)
         return strg
-    else:
-        bs64 = input(Message_bs64)
-        return bs64
 
 
-def is_hexa(inp):                                                            # Check if input is an actual HEX value.
+def is_hexa(inp):                                                    # Check if input is an actual HEX value.
     try:
         int(inp, 16)
         return True
@@ -40,18 +40,18 @@ def is_hexa(inp):                                                            # C
         return False
 
 
-def hex2b64(i):                                                              # make sure input is Hex then convert it to BASE64
+def hex2b64(i):                                                      # make sure input is Hex then convert it to BASE64
     i = i
     hx = read(i)
-    if is_hexa(hx):                                                          # make sure input is Hex
-        bas64 = encode(decode(hx, 'hex'), 'base64').decode()                 # Convert it to BASE64
+    if is_hexa(hx):                                                  # make sure input is Hex
+        bas64 = encode(decode(hx, 'hex'), 'base64').decode()         # Convert it to BASE64
         print("\n")
         return bas64
     else:
         return Err
 
 
-def bas62hex(i):                                                             # Convert base64 to hex
+def bas62hex(i):                                                     # Convert base64 to hex
     i = i
     bs = read(i)
 
